@@ -4,20 +4,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Explore what makes a restaurant family-friendly and discover SOVANA By Trees and Treats in Greater Noida.">
+<meta name="description" content="Discover the best family restaurants in Greater Noida. Explore SOVANA By Trees and Treats, a vegetarian multi-cuisine dining destination in Knowledge Park III.">
 <title>Best Family Restaurants in Greater Noida | SOVANA</title>
 
 <style>
 :root {
-  --ink: #25251f;
-  --muted: #68685f;
-  --gold: #d4a94f;
-  --cream: #f8f6f0;
   --sovana-blue: #0646a5;
   --sovana-blue-dark: #043b91;
   --sovana-blue-deep: #033782;
+  --gold: #d4a94f;
+  --cream: #f8f6f0;
+  --ink: #25251f;
+  --muted: #68685f;
   --line: #e7e2d7;
-  --deep: #0646a5;
   --max: 1200px;
 }
 
@@ -62,7 +61,7 @@ a {
   justify-content: space-between;
   gap: 25px;
   background: #fff;
-  border: 1.5px solid #0646a5;
+  border: 1.5px solid var(--sovana-blue);
   border-radius: 60px;
   box-shadow: 0 5px 20px rgba(0,0,0,.08);
 }
@@ -74,15 +73,21 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #07549a;
+  padding: 0;
+  background: transparent;
   border-radius: 50px;
-  padding: 5px 22px;
+  overflow: hidden;
+  text-decoration: none;
 }
 
 .brand__logo-image {
+  display: block;
   width: 100%;
-  height: 54px;
+  height: 100%;
   object-fit: contain;
+  object-position: center;
+  padding: 0;
+  margin: 0;
 }
 
 .desktop-menu {
@@ -109,11 +114,6 @@ a {
   color: #fff;
 }
 
-.navbar__desktop {
-  display: flex;
-  align-items: center;
-}
-
 .login-btn {
   display: flex;
   align-items: center;
@@ -121,7 +121,7 @@ a {
   padding: 15px 26px;
   border: 1px solid #d5e0ef;
   border-radius: 40px;
-  color: #0646a5;
+  color: var(--sovana-blue);
   text-decoration: none;
   font-size: 17px;
   font-weight: 600;
@@ -226,14 +226,14 @@ a {
   display: block;
   text-align: center;
   padding: 12px;
-  background: var(--deep);
+  background: var(--sovana-blue);
   color: white;
   text-decoration: none;
   font: 14px Arial, sans-serif;
   border-radius: 30px;
 }
 
-/* ARTICLE */
+/* ARTICLE HERO */
 
 .article-hero {
   background: var(--cream);
@@ -265,6 +265,8 @@ a {
   background: var(--gold);
   margin: 27px auto 0;
 }
+
+/* ARTICLE */
 
 .article-wrap {
   max-width: 900px;
@@ -303,22 +305,15 @@ a {
 /* FOOTER */
 
 .sovana-footer {
-  --sovana-blue: #0646a5;
-  --sovana-blue-dark: #043b91;
-  --sovana-blue-deep: #033782;
   --white: #fff;
   --white-soft: #ffffffcc;
   --white-muted: #ffffff9e;
-  --gold: #d4a94f;
-  --gold-light: #e4bf69;
 
   width: 100%;
-  min-height: 100%;
   color: var(--white);
   position: relative;
   overflow: hidden;
   font-family: Arial, sans-serif;
-
   background: linear-gradient(
     135deg,
     var(--sovana-blue) 0%,
@@ -415,7 +410,7 @@ a {
 
 .sovana-footer__column-line {
   width: 35px;
-  height: 1px;
+  height: 2px;
   background: var(--gold);
   margin-bottom: 18px;
 }
@@ -431,8 +426,9 @@ a {
   text-decoration: none;
 }
 
-.sovana-footer__column nav a:hover {
-  color: #d4b77f;
+.sovana-footer__column nav a:hover,
+.sovana-footer__discover:hover {
+  color: #fff;
 }
 
 .sovana-footer__contact-item {
@@ -454,7 +450,7 @@ a {
 
 .sovana-footer__contact-content span {
   color: #ffc34f;
-  font-size: 14px !important;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: .12em;
 }
@@ -481,12 +477,19 @@ a {
 
 .sovana-footer__bottom p {
   margin: 0;
-  font-size: 11px !important;
+  font-size: 12px;
 }
 
-.sovana-footer__credit strong {
+.sovana-footer__credit a {
   color: #d4b77f;
+  text-decoration: none;
+  font-weight: 700;
   letter-spacing: .08em;
+}
+
+.sovana-footer__credit a:hover {
+  color: #fff;
+  text-decoration: underline;
 }
 
 /* RESPONSIVE */
@@ -533,20 +536,11 @@ a {
   .brand {
     width: 220px;
     height: 52px;
-    min-height: 48px;
-    padding: 4px 12px;
   }
 
   .brand__logo-image {
-    width: 165px;
-    max-height: 40px;
-    height: 44px;
-  }
-
-  .mobile-menu-btn {
-    width: 48px;
-    height: 48px;
-    font-size: 23px;
+    width: 100%;
+    height: 100%;
   }
 }
 
@@ -573,10 +567,7 @@ a {
     gap: 34px 22px;
   }
 
-  .sovana-footer__brand {
-    grid-column: 1 / -1;
-  }
-
+  .sovana-footer__brand,
   .sovana-footer__visit {
     grid-column: 1 / -1;
   }
@@ -623,13 +614,8 @@ a {
 
     <div class="navbar__mobile" id="mobileMenu">
 
-      <button
-        type="button"
-        class="mobile-menu-btn"
-        id="openMenu"
-        aria-label="Open Menu"
-        aria-expanded="false"
-      >☰</button>
+      <button type="button" class="mobile-menu-btn"
+        id="openMenu" aria-label="Open Menu" aria-expanded="false">☰</button>
 
       <div class="mobile-overlay" id="mobileOverlay"></div>
 
@@ -640,13 +626,8 @@ a {
             <h2>SOVANA</h2>
             <span>WHERE GODS WOULD DINE</span>
           </div>
-
-          <button
-            type="button"
-            class="mobile-close-btn"
-            id="closeMenu"
-            aria-label="Close Menu"
-          >✕</button>
+          <button type="button" class="mobile-close-btn"
+            id="closeMenu" aria-label="Close Menu">✕</button>
         </div>
 
         <nav class="mobile-nav">
@@ -669,73 +650,77 @@ a {
   </div>
 </header>
 
-<!-- ARTICLE CONTENT -->
+<!-- ARTICLE -->
 
 <main>
 
-  <section class="article-hero">
-    <p class="article-hero__eyebrow">SOVANA · DINING &amp; HOSPITALITY</p>
-    <h1>Best Family Restaurants in Greater Noida</h1>
-    <div class="article-hero__rule"></div>
-  </section>
+<section class="article-hero">
+  <p class="article-hero__eyebrow">SOVANA · DINING &amp; HOSPITALITY</p>
+  <h1>Best Family Restaurants in Greater Noida</h1>
+  <div class="article-hero__rule"></div>
+</section>
 
-  <article class="article-wrap">
-    <div class="article-content">
+<article class="article-wrap">
+<div class="article-content">
 
-      <p>Choosing a restaurant for a family outing can take more thought than simply deciding what to eat. When parents, children, relatives or friends are part of the plan, everyone may have different expectations. Some people want familiar food, others enjoy trying new cuisines, and many simply want a comfortable place where they can sit together and talk. A good family restaurant brings these things together. It offers a welcoming atmosphere, a menu with enough variety and a setting that works for an ordinary lunch as well as a special occasion. Greater Noida has a growing dining scene, so families have more choices than before, but finding a place that suits the whole group still matters.</p>
+<p>Choosing a restaurant for a family outing can take more thought than simply deciding what to eat. When parents, children, relatives or friends are part of the plan, everyone may have different expectations. Some people want familiar food, others enjoy trying new cuisines, and many simply want a comfortable place where they can sit together and talk. A good family restaurant brings these things together. It offers a welcoming atmosphere, a menu with enough variety and a setting that works for an ordinary lunch as well as a special occasion. Greater Noida has a growing dining scene, so families have more choices than before, but finding a place that suits the whole group still matters.</p>
 
-      <p>The reason for going out also shapes the choice. A quick meal after shopping, a relaxed weekend lunch, a dinner with parents or a birthday celebration may call for slightly different surroundings. Families often look for restaurants where the experience feels easy rather than rushed, where the seating is comfortable and where different food preferences can be accommodated. For anyone searching for the best family restaurants in Greater Noida, it is useful to consider the complete experience instead of judging a restaurant only by its cuisine or appearance. That balance turns a meal outside into an outing everyone enjoys, without making the choice complicated for the family.</p>
+<p>The reason for going out also shapes the choice. A quick meal after shopping, a relaxed weekend lunch, a dinner with parents or a birthday celebration may call for slightly different surroundings. Families often look for restaurants where the experience feels easy rather than rushed, where the seating is comfortable and where different food preferences can be accommodated. For anyone searching for the <a href="https://sovana.in/">best family restaurants in Greater Noida</a>, it is useful to consider the complete experience instead of judging a restaurant only by its cuisine or appearance. That balance turns a meal outside into an outing everyone enjoys, without making the choice complicated for the family.</p>
 
-      <h2>What Makes a Restaurant Family-Friendly?</h2>
+<h2>What Makes a Restaurant Family-Friendly?</h2>
 
-      <p>A family-friendly restaurant should feel welcoming to people across different age groups. Comfortable seating, a pleasant atmosphere and a layout that allows people to enjoy a conversation are all important. Parents may want a calm place to spend time with their children, while older family members may appreciate a setting where they can relax over a meal. The ambience does not have to be overly formal; in many cases, a cosy and thoughtfully designed space is exactly what makes an outing enjoyable.</p>
+<p>A family-friendly restaurant should feel welcoming to people across different age groups. Comfortable seating, a pleasant atmosphere and a layout that allows people to enjoy a conversation are all important. Parents may want a calm place to spend time with their children, while older family members may appreciate a setting where they can relax over a meal. The ambience does not have to be overly formal; in many cases, a cosy and thoughtfully designed space is exactly what makes an outing enjoyable.</p>
 
-      <p>The menu is another major consideration. It can be difficult to choose one restaurant when everyone in the group prefers something different. A multi-cuisine menu makes the decision easier because diners can consider several styles of food in one place. Vegetarian options are particularly important for families who prefer to dine at a completely vegetarian restaurant. When the food choices, atmosphere and seating all work together, the restaurant becomes suitable for more than one type of visit.</p>
+<p>The menu is another major consideration. It can be difficult to choose one restaurant when everyone in the group prefers something different. A multi-cuisine menu makes the decision easier because diners can consider several styles of food in one place. Vegetarian options are particularly important for families who prefer to dine at a completely vegetarian restaurant. When the food choices, atmosphere and seating all work together, the restaurant becomes suitable for more than one type of visit.</p>
 
-      <h2>SOVANA By Trees and Treats in Greater Noida</h2>
+<h2>SOVANA By Trees and Treats in Greater Noida</h2>
 
-      <p>For people looking for a vegetarian family restaurant in Greater Noida, SOVANA By Trees and Treats is one destination to consider. The restaurant is located opposite JIMS College in Knowledge Park III and brings together a fine dining concept with a cosy cafe atmosphere. This combination gives it a setting that can suit different kinds of plans, from a casual meal to a more carefully planned dinner. Its location also makes it relevant for people who live, study or work around Knowledge Park and want to explore a dining option within the area.</p>
+<p>For people looking for a vegetarian family restaurant in Greater Noida, <a href="https://sovana.in/">SOVANA By Trees and Treats</a> is one destination to consider. The restaurant is located opposite JIMS College in Knowledge Park III and brings together a fine dining concept with a cosy cafe atmosphere. This combination gives it a setting that can suit different kinds of plans, from a casual meal to a more carefully planned dinner. Its location also makes it relevant for people who live, study or work around Knowledge Park and want to explore a dining option within the area.</p>
 
-      <p>A distinctive feature of SOVANA is its lush, garden-themed ambience. The greenery-inspired concept gives the restaurant a different character from a conventional dining space and creates a setting for people who enjoy spending time in a visually pleasant environment. For a family outing, the surroundings can be part of the experience: people are not only coming together to eat, but also making time to talk and enjoy one another's company. A relaxed atmosphere can make that time feel more comfortable.</p>
+<p>A distinctive feature of SOVANA is its lush, garden-themed ambience. The greenery-inspired concept gives the restaurant a different character from a conventional dining space and creates a setting for people who enjoy spending time in a visually pleasant environment. For a family outing, the surroundings can be part of the experience: people are not only coming together to eat, but also making time to talk and enjoy one another's company. A relaxed atmosphere can make that time feel more comfortable.</p>
 
-      <p>SOVANA offers both indoor and outdoor seating, so visitors can choose according to their preference and the nature of their visit. Indoor seating may suit diners who prefer a conventional restaurant setting, while the outdoor option offers a different atmosphere for those who enjoy an open, garden-inspired environment. Having both choices makes the space flexible for family meals, casual meetings and outings with friends. Visitors who have a particular seating preference can confirm the available arrangements with the restaurant before visiting.</p>
+<p>SOVANA offers both indoor and outdoor seating, so visitors can choose according to their preference and the nature of their visit. Indoor seating may suit diners who prefer a conventional restaurant setting, while the outdoor option offers a different atmosphere for those who enjoy an open, garden-inspired environment. Having both choices makes the space flexible for family meals, casual meetings and outings with friends. Visitors who have a particular seating preference can confirm the available arrangements with the restaurant before visiting.</p>
 
-      <p>The restaurant is purely vegetarian, which is an important consideration for diners who specifically seek vegetarian places. Its menu covers North Indian, Chinese, Continental and Mediterranean cuisines. This range gives families and groups several directions to explore rather than limiting everyone to one style of food. Whether someone prefers familiar Indian cuisine or is interested in a different international option, a multi-cuisine menu can make it easier for the group to settle on one destination.</p>
+<p>The restaurant is purely vegetarian, which is an important consideration for diners who specifically seek vegetarian places. Its menu covers North Indian, Chinese, Continental and Mediterranean cuisines. This range gives families and groups several directions to explore rather than limiting everyone to one style of food. Whether someone prefers familiar Indian cuisine or is interested in a different international option, a multi-cuisine menu can make it easier for the group to settle on one destination.</p>
 
-      <p>You can find more information through the <a href="https://sovana.in" target="_blank" rel="noopener">official SOVANA website</a> and check the location using <a href="https://maps.app.goo.gl/V2odr1DZiSBDsMQx9" target="_blank" rel="noopener">SOVANA By Trees and Treats on Google Maps</a>.</p>
+<p>You can explore the <a href="https://sovana.in/">official SOVANA website</a> for more information about the restaurant and its dining experience.</p>
 
-      <h2>A Menu with Different Cuisines to Explore</h2>
+<p>Visitors can also find the restaurant through its <a href="https://share.google/alF02GLVA5hHd7vgO" target="_blank" rel="noopener noreferrer">SOVANA Google Business Profile</a> or get directions using <a href="https://maps.app.goo.gl/BcuT3ft1Gq35C2uy6" target="_blank" rel="noopener noreferrer">SOVANA on Google Maps</a>.</p>
 
-      <p>One of the practical advantages of a multi-cuisine restaurant is the flexibility it offers when people dine together. Family members do not always share the same tastes. Some may prefer the familiar flavours of North Indian food, while others may be in the mood for Chinese cuisine. Continental and Mediterranean options provide further variety for diners who enjoy exploring food from different culinary traditions. Having these choices at one restaurant can make group planning simpler, particularly when nobody wants to compromise entirely on their preference.</p>
+<h2>A Menu with Different Cuisines to Explore</h2>
 
-      <p>North Indian cuisine is a familiar choice for many family meals and can suit people who enjoy traditional flavours. Chinese food offers a different option for those who want to change their usual routine, while Continental and Mediterranean cuisines widen the selection. The value of this variety is not simply the number of cuisines listed on a menu; it is the convenience of being able to sit together and choose according to individual tastes. It can make the restaurant relevant for families, couples, friends and colleagues.</p>
+<p>One of the practical advantages of a multi-cuisine restaurant is the flexibility it offers when people dine together. Family members do not always share the same tastes. Some may prefer the familiar flavours of North Indian food, while others may be in the mood for Chinese cuisine. Continental and Mediterranean options provide further variety for diners who enjoy exploring food from different culinary traditions. Having these choices at one restaurant can make group planning simpler, particularly when nobody wants to compromise entirely on their preference.</p>
 
-      <h2>A Garden-Themed Setting for Everyday Dining</h2>
+<p>North Indian cuisine is a familiar choice for many family meals and can suit people who enjoy traditional flavours. Chinese food offers a different option for those who want to change their usual routine, while Continental and Mediterranean cuisines widen the selection. The value of this variety is not simply the number of cuisines listed on a menu; it is the convenience of being able to sit together and choose according to individual tastes. It can make the restaurant relevant for families, couples, friends and colleagues.</p>
 
-      <p>The atmosphere of a restaurant can influence how people remember an outing. A meal may be the main reason for visiting, but the surroundings help shape the time spent there. A comfortable setting gives family members room to talk, catch up and enjoy the occasion without feeling that the visit is only about finishing a meal. This is especially relevant for weekend lunches and dinners when people want to slow down and spend time together.</p>
+<h2>A Garden-Themed Setting for Everyday Dining</h2>
 
-      <p>SOVANA's garden-themed concept gives its dining space a greenery-inspired character. The combination of this ambience with indoor and outdoor seating provides options for visitors with different preferences. Some may prefer to sit indoors, while others may be drawn to the outdoor setting. The cosy cafe atmosphere also makes the restaurant suitable for informal plans, such as meeting friends or taking a break during a busy day. Its fine dining positioning adds another dimension for people planning a more deliberate meal.</p>
+<p>The atmosphere of a restaurant can influence how people remember an outing. A meal may be the main reason for visiting, but the surroundings help shape the time spent there. A comfortable setting gives family members room to talk, catch up and enjoy one another's company without feeling that the visit is only about finishing a meal. This is especially relevant for weekend lunches and dinners when people want to slow down and spend time together.</p>
 
-      <h2>Family Meals, Birthdays and Small Celebrations</h2>
+<p>SOVANA's garden-themed concept gives its dining space a greenery-inspired character. The combination of this ambience with indoor and outdoor seating provides options for visitors with different preferences. Some may prefer to sit indoors, while others may be drawn to the outdoor setting. The cosy cafe atmosphere also makes the restaurant suitable for informal plans, such as meeting friends or taking a break during a busy day. Its fine dining positioning adds another dimension for people planning a more deliberate meal.</p>
 
-      <p>Restaurants are often chosen for occasions that bring people together. Birthdays, anniversaries and family get-togethers provide a reason to step away from everyday routines and spend time with loved ones. Celebrating at a restaurant can make planning easier because the group can meet at one place and enjoy a meal together. The venue's atmosphere and seating arrangements become particularly important when the visit is about more than an ordinary lunch or dinner.</p>
+<h2>Family Meals, Birthdays and Small Celebrations</h2>
 
-      <p>SOVANA is also positioned as an events venue in Greater Noida and Knowledge Park. Its garden-themed ambience, indoor and outdoor seating and multi-cuisine vegetarian offering make it a place to consider for gatherings and celebrations. A varied menu can be helpful when guests have different food preferences, while the setting gives organisers another factor to consider when choosing a venue. The restaurant may be relevant for birthday meals, anniversary outings and smaller family get-togethers.</p>
+<p>Restaurants are often chosen for occasions that bring people together. Birthdays, anniversaries and family get-togethers provide a reason to step away from everyday routines and spend time with loved ones. Celebrating at a restaurant can make planning easier because the group can meet at one place and enjoy a meal together. The venue's atmosphere and seating arrangements become particularly important when the visit is about more than an ordinary lunch or dinner.</p>
 
-      <h2>Location and Planning Your Visit</h2>
+<p>SOVANA is also positioned as an events venue in Greater Noida and Knowledge Park. Its garden-themed ambience, indoor and outdoor seating and multi-cuisine vegetarian offering make it a place to consider for gatherings and celebrations. A varied menu can be helpful when guests have different food preferences, while the setting gives organisers another factor to consider when choosing a venue. The restaurant may be relevant for birthday meals, anniversary outings and smaller family get-togethers.</p>
 
-      <p>SOVANA By Trees and Treats is located opposite JIMS College in Knowledge Park III, Greater Noida. This location can be useful for people already in or around Knowledge Park, including residents, students and working professionals. It also gives visitors a clear landmark to use when planning their journey. If you are travelling from another part of Greater Noida, checking the map before leaving can help you confirm the route and estimate your travel time.</p>
+<h2>Location and Planning Your Visit</h2>
 
-      <p>Greater Noida's dining options continue to offer different experiences, from casual cafes to restaurants designed for longer meals and celebrations. The best choice depends on the people joining you, the food they enjoy and the kind of atmosphere you want. Taking a moment to compare these details can help you choose a restaurant that fits the occasion rather than simply selecting the first name in a search result.</p>
+<p>SOVANA By Trees and Treats is located opposite JIMS College in Knowledge Park III, Greater Noida. This location can be useful for people already in or around Knowledge Park, including residents, students and working professionals. It also gives visitors a clear landmark to use when planning their journey. If you are travelling from another part of Greater Noida, checking the map before leaving can help you confirm the route and estimate your travel time.</p>
 
-      <h2>Final Thoughts</h2>
+<p>To plan your visit, you can <a href="https://maps.app.goo.gl/BcuT3ft1Gq35C2uy6" target="_blank" rel="noopener noreferrer">check SOVANA's location and directions on Google Maps</a>. You can also visit the <a href="https://share.google/alF02GLVA5hHd7vgO" target="_blank" rel="noopener noreferrer">Google Business Profile of SOVANA</a> for its business listing.</p>
 
-      <p>Finding the best family restaurants in Greater Noida is ultimately about choosing a place where food, ambience and convenience come together. A varied menu helps when everyone has different preferences, comfortable seating makes it easier to spend time together, and a suitable location keeps the outing convenient. These details matter whether you are planning a regular family lunch, a weekend dinner or a celebration with relatives and friends.</p>
+<p>Greater Noida's dining options continue to offer different experiences, from casual cafes to restaurants designed for longer meals and celebrations. The best choice depends on the people joining you, the food they enjoy and the kind of atmosphere you want. Taking a moment to compare these details can help you choose a restaurant that fits the occasion rather than simply selecting the first name in a search result.</p>
 
-      <p>SOVANA By Trees and Treats is worth considering if you are looking for a purely vegetarian restaurant in Greater Noida with a multi-cuisine menu and a garden-themed setting. Located opposite JIMS College in Knowledge Park III, it offers North Indian, Chinese, Continental and Mediterranean cuisines, along with indoor and outdoor seating. Its cosy cafe atmosphere and fine dining concept make it an option for casual visits as well as planned gatherings. If these features match what you are looking for, explore the restaurant's website, check its Google Maps location and contact the team directly for details before planning your visit.</p>
+<h2>Final Thoughts</h2>
 
-    </div>
-  </article>
+<p>Finding the best family restaurants in Greater Noida is ultimately about choosing a place where food, ambience and convenience come together. A varied menu helps when everyone has different preferences, comfortable seating makes it easier to spend time together, and a suitable location keeps the outing convenient. These details matter whether you are planning a regular family lunch, a weekend dinner or a celebration with relatives and friends.</p>
+
+<p>SOVANA By Trees and Treats is worth considering if you are looking for a purely vegetarian restaurant in Greater Noida with a multi-cuisine menu and a garden-themed setting. Located opposite JIMS College in Knowledge Park III, it offers North Indian, Chinese, Continental and Mediterranean cuisines, along with indoor and outdoor seating. Its cosy cafe atmosphere and fine dining concept make it an option for casual visits as well as planned gatherings. Explore the <a href="https://sovana.in/">SOVANA website</a>, view its <a href="https://share.google/alF02GLVA5hHd7vgO" target="_blank" rel="noopener noreferrer">Google Business Profile</a> and <a href="https://maps.app.goo.gl/BcuT3ft1Gq35C2uy6" target="_blank" rel="noopener noreferrer">get directions through Google Maps</a> before planning your visit.</p>
+
+</div>
+</article>
 
 </main>
 
@@ -743,144 +728,140 @@ a {
 
 <footer class="sovana-footer">
 
-  <div class="sovana-footer__main">
+<div class="sovana-footer__main">
+<div class="sovana-footer__container">
 
-    <div class="sovana-footer__container">
+<section class="sovana-footer__brand">
 
-      <section class="sovana-footer__brand">
+<a href="https://sovana.in" class="sovana-footer__logo"
+aria-label="SOVANA - Greek and Mediterranean Restaurant in Greater Noida">SOVANA</a>
 
-        <a
-          href="https://sovana.in"
-          class="sovana-footer__logo"
-          aria-label="SOVANA - Greek and Mediterranean Restaurant in Greater Noida"
-        >SOVANA</a>
+<span class="sovana-footer__tagline">
+GREEK · MEDITERRANEAN · HOSPITALITY
+</span>
 
-        <span class="sovana-footer__tagline">
-          GREEK · MEDITERRANEAN · HOSPITALITY
-        </span>
+<div class="sovana-footer__gold-line"><span></span></div>
 
-        <div class="sovana-footer__gold-line">
-          <span></span>
-        </div>
+<p>
+Experience Greek-inspired flavours, Mediterranean cuisine
+and elegant hospitality at SOVANA, a luxury dining
+destination in Greater Noida.
+</p>
 
-        <p>
-          Experience Greek-inspired flavours, Mediterranean cuisine
-          and elegant hospitality at SOVANA, a luxury dining
-          destination in Greater Noida.
-        </p>
+<a href="https://sovana.in/about" class="sovana-footer__discover">
+DISCOVER SOVANA <span>→</span>
+</a>
 
-        <a href="https://sovana.in/about" class="sovana-footer__discover">
-          DISCOVER SOVANA <span>→</span>
-        </a>
+</section>
 
-      </section>
+<section class="sovana-footer__column">
 
-      <section class="sovana-footer__column">
+<h2>Explore</h2>
+<div class="sovana-footer__column-line"></div>
 
-        <h2>Explore</h2>
-        <div class="sovana-footer__column-line"></div>
+<nav aria-label="Explore SOVANA">
+<a href="/">Home</a>
+<a href="https://sovana.in/about">About SOVANA</a>
+<a href="https://sovana.in/gallery">Gallery</a>
+<a href="https://sovana.in/contact">Contact Us</a>
+</nav>
 
-        <nav aria-label="Explore SOVANA">
-          <a href="/">Home</a>
-          <a href="https://sovana.in/about">About SOVANA</a>
-          <a href="https://sovana.in/gallery">Gallery</a>
-          <a href="https://sovana.in/contact">Contact Us</a>
-        </nav>
+</section>
 
-      </section>
+<section class="sovana-footer__column">
 
-      <section class="sovana-footer__column">
+<h2>Dine at SOVANA</h2>
+<div class="sovana-footer__column-line"></div>
 
-        <h2>Dine at SOVANA</h2>
-        <div class="sovana-footer__column-line"></div>
+<nav aria-label="Dining at SOVANA">
+<a href="https://sovana.in/login">Reserve a Table</a>
+</nav>
 
-        <nav aria-label="Dining at SOVANA">
-          <a href="https://sovana.in/login">Reserve a Table</a>
-        </nav>
+</section>
 
-      </section>
+<section class="sovana-footer__column sovana-footer__visit">
 
-      <section class="sovana-footer__column sovana-footer__visit">
+<h2>Visit SOVANA</h2>
+<div class="sovana-footer__column-line"></div>
 
-        <h2>Visit SOVANA</h2>
-        <div class="sovana-footer__column-line"></div>
+<div class="sovana-footer__contact-item">
 
-        <div class="sovana-footer__contact-item">
+<div class="sovana-footer__contact-icon-wrap">
+<svg viewBox="0 0 24 24" aria-hidden="true" class="footer-contact-icon">
+<path d="M20 10.3c0 5.1-8 11-8 11s-8-5.9-8-11a8 8 0 1 1 16 0Z"
+fill="none" stroke="currentColor" stroke-width="1.7"></path>
+<circle cx="12" cy="10" r="2.5"
+fill="none" stroke="currentColor" stroke-width="1.7"></circle>
+</svg>
+</div>
 
-          <div class="sovana-footer__contact-icon-wrap">
-            <svg viewBox="0 0 24 24" aria-hidden="true" class="footer-contact-icon">
-              <path d="M20 10.3c0 5.1-8 11-8 11s-8-5.9-8-11a8 8 0 1 1 16 0Z"
-                fill="none" stroke="currentColor" stroke-width="1.7"></path>
-              <circle cx="12" cy="10" r="2.5"
-                fill="none" stroke="currentColor" stroke-width="1.7"></circle>
-            </svg>
-          </div>
+<div class="sovana-footer__contact-content">
+<span>LOCATION</span>
+<p>
+Opposite JIMS College, Knowledge Park III,
+Greater Noida,<br>
+Uttar Pradesh 201308
+</p>
+</div>
 
-          <div class="sovana-footer__contact-content">
-            <span>LOCATION</span>
-            <p>
-              Opposite JIMS College, Knowledge Park III,
-              Greater Noida,<br>
-              Uttar Pradesh 201308
-            </p>
-          </div>
+</div>
 
-        </div>
+<div class="sovana-footer__contact-item">
 
-        <div class="sovana-footer__contact-item">
+<div class="sovana-footer__contact-icon-wrap">
+<svg viewBox="0 0 24 24" aria-hidden="true" class="footer-contact-icon">
+<path d="M7.1 3.7 9.3 3c.7-.2 1.4.2 1.7.8l1.2 2.8c.2.5.1 1-.2 1.4L10.7 9.6a15.3 15.3 0 0 0 3.7 3.7l1.6-1.3c.4-.3.9-.4 1.4-.2l2.8 1.2c.6.3.9 1 .8 1.7l-.7 2.2c-.2.7-.8 1.1-1.5 1.1C11.4 18 6 12.6 6 5.2c0-.7.4-1.3 1.1-1.5Z"
+fill="none" stroke="currentColor" stroke-width="1.7"
+stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
 
-          <div class="sovana-footer__contact-icon-wrap">
-            <svg viewBox="0 0 24 24" aria-hidden="true" class="footer-contact-icon">
-              <path d="M7.1 3.7 9.3 3c.7-.2 1.4.2 1.7.8l1.2 2.8c.2.5.1 1-.2 1.4L10.7 9.6a15.3 15.3 0 0 0 3.7 3.7l1.6-1.3c.4-.3.9-.4 1.4-.2l2.8 1.2c.6.3.9 1 .8 1.7l-.7 2.2c-.2.7-.8 1.1-1.5 1.1C11.4 18 6 12.6 6 5.2c0-.7.4-1.3 1.1-1.5Z"
-                fill="none" stroke="currentColor" stroke-width="1.7"
-                stroke-linecap="round" stroke-linejoin="round"></path>
-            </svg>
-          </div>
+<div class="sovana-footer__contact-content">
+<span>RESERVATIONS</span>
+<p>Contact SOVANA<br>for table reservations</p>
+</div>
 
-          <div class="sovana-footer__contact-content">
-            <span>RESERVATIONS</span>
-            <p>Contact SOVANA<br>for table reservations</p>
-          </div>
+</div>
 
-        </div>
+<div class="sovana-footer__contact-item">
 
-        <div class="sovana-footer__contact-item">
+<div class="sovana-footer__contact-icon-wrap">
+<svg viewBox="0 0 24 24" aria-hidden="true" class="footer-contact-icon">
+<circle cx="12" cy="12" r="8.5"
+fill="none" stroke="currentColor" stroke-width="1.7"></circle>
+<path d="M12 7.5v5l3.2 1.9"
+fill="none" stroke="currentColor" stroke-width="1.7"
+stroke-linecap="round"></path>
+</svg>
+</div>
 
-          <div class="sovana-footer__contact-icon-wrap">
-            <svg viewBox="0 0 24 24" aria-hidden="true" class="footer-contact-icon">
-              <circle cx="12" cy="12" r="8.5"
-                fill="none" stroke="currentColor" stroke-width="1.7"></circle>
-              <path d="M12 7.5v5l3.2 1.9"
-                fill="none" stroke="currentColor" stroke-width="1.7"
-                stroke-linecap="round"></path>
-            </svg>
-          </div>
+<div class="sovana-footer__contact-content">
+<span>HOURS</span>
+<p>11:00 AM – 11:00 PM<br>Monday – Sunday</p>
+</div>
 
-          <div class="sovana-footer__contact-content">
-            <span>HOURS</span>
-            <p>11:00 AM – 11:00 PM<br>Monday – Sunday</p>
-          </div>
+</div>
 
-        </div>
+</section>
 
-      </section>
+</div>
+</div>
 
-    </div>
-  </div>
+<div class="sovana-footer__bottom">
 
-  <div class="sovana-footer__bottom">
+<p>
+© 2026 TREES &amp; TREATS HOSPITALITY SERVICES.
+All rights reserved.
+</p>
 
-    <p>
-      © 2026 TREES &amp; TREATS HOSPITALITY SERVICES.
-      All rights reserved.
-    </p>
+<p class="sovana-footer__credit">
+Designed and Developed by
+<a href="https://snapticlemedia.in/"
+target="_blank"
+rel="noopener noreferrer">SNAPTICLEMEDIA</a>
+</p>
 
-    <p class="sovana-footer__credit">
-      Designed and Developed by
-      <strong>SNAPTICLEMEDIA</strong>
-    </p>
-
-  </div>
+</div>
 
 </footer>
 
