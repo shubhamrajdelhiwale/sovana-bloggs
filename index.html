@@ -4,40 +4,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Discover the best family restaurants in Greater Noida. Explore SOVANA By Trees and Treats, a vegetarian multi-cuisine dining destination in Knowledge Park III.">
+
 <title>Best Family Restaurants in Greater Noida | SOVANA</title>
+
+<meta name="description" content="Explore the best family restaurants in Greater Noida and discover SOVANA, a vegetarian multi-cuisine dining destination in Knowledge Park III.">
 
 <style>
 :root {
-  --sovana-blue: #0646a5;
-  --sovana-blue-dark: #043b91;
-  --sovana-blue-deep: #033782;
-  --gold: #d4a94f;
+  --blue: #07549a;
+  --blue-dark: #06428e;
+  --gold: #d4ad62;
   --cream: #f8f6f0;
-  --ink: #25251f;
-  --muted: #68685f;
-  --line: #e7e2d7;
-  --max: 1200px;
+  --text: #292920;
 }
 
 * {
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   margin: 0;
-  color: var(--ink);
+  color: var(--text);
   background: #fff;
   font-family: Georgia, "Times New Roman", serif;
-  line-height: 1.75;
+  line-height: 1.8;
 }
 
 a {
-  color: inherit;
+  transition: .25s ease;
 }
 
 /* HEADER */
@@ -46,7 +40,7 @@ a {
   position: sticky;
   top: 0;
   z-index: 1000;
-  padding: 15px 1.5%;
+  padding: 14px 2%;
   background: transparent;
   font-family: Arial, sans-serif;
 }
@@ -55,15 +49,15 @@ a {
   max-width: 1800px;
   min-height: 84px;
   margin: auto;
-  padding: 9px 30px;
+  padding: 9px 25px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 25px;
+  gap: 20px;
   background: #fff;
-  border: 1.5px solid var(--sovana-blue);
+  border: 1.5px solid var(--blue);
   border-radius: 60px;
-  box-shadow: 0 5px 20px rgba(0,0,0,.08);
+  box-shadow: 0 5px 20px rgba(0,0,0,.07);
 }
 
 .brand {
@@ -73,58 +67,53 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0;
-  background: transparent;
-  border-radius: 50px;
   overflow: hidden;
-  text-decoration: none;
+  background: #07549a;
+  border-radius: 50px;
 }
 
 .brand__logo-image {
-  display: block;
   width: 100%;
   height: 100%;
+  display: block;
   object-fit: contain;
   object-position: center;
-  padding: 0;
-  margin: 0;
+  border-radius: 50px;
 }
 
 .desktop-menu {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(12px, 1.7vw, 32px);
+  gap: clamp(7px, 1.2vw, 22px);
 }
 
 .desktop-menu__item {
   color: #292929;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 500;
   white-space: nowrap;
-  padding: 15px 20px;
+  padding: 13px 15px;
   border-radius: 40px;
-  transition: .25s ease;
 }
 
 .desktop-menu__item:hover,
 .desktop-menu__item.active {
-  background: #0953a9;
+  background: var(--blue);
   color: #fff;
 }
 
 .login-btn {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 15px 26px;
+  gap: 10px;
+  padding: 14px 23px;
   border: 1px solid #d5e0ef;
   border-radius: 40px;
-  color: var(--sovana-blue);
+  color: var(--blue);
   text-decoration: none;
-  font-size: 17px;
-  font-weight: 600;
+  font-size: 15px;
   white-space: nowrap;
 }
 
@@ -136,17 +125,17 @@ a {
 .mobile-close-btn {
   border: 0;
   background: transparent;
-  color: var(--sovana-blue);
+  color: var(--blue);
   cursor: pointer;
+  font-size: 25px;
   padding: 8px;
 }
 
 .mobile-menu-btn {
-  width: 55px;
-  height: 55px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
-  background: #fff;
-  font-size: 27px;
+  background: white;
   box-shadow: 0 3px 18px rgba(0,0,0,.08);
 }
 
@@ -154,15 +143,15 @@ a {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,.5);
   z-index: 1001;
+  background: rgba(0,0,0,.5);
 }
 
 .mobile-drawer {
   position: fixed;
-  z-index: 1002;
   top: 0;
   right: 0;
+  z-index: 1002;
   width: min(360px, 88vw);
   height: 100dvh;
   padding: 25px;
@@ -171,7 +160,6 @@ a {
   transition: transform .3s ease;
   display: flex;
   flex-direction: column;
-  box-shadow: -10px 0 35px rgba(0,0,0,.12);
 }
 
 .navbar__mobile.open .mobile-overlay {
@@ -186,19 +174,19 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 24px;
-  border-bottom: 1px solid var(--line);
+  padding-bottom: 22px;
+  border-bottom: 1px solid #eee;
 }
 
 .mobile-brand h2 {
   margin: 0;
+  font-size: 26px;
   letter-spacing: .18em;
-  font: 26px Arial, sans-serif;
 }
 
 .mobile-brand span {
   font: 9px Arial, sans-serif;
-  letter-spacing: .18em;
+  letter-spacing: .15em;
   color: var(--gold);
 }
 
@@ -210,10 +198,12 @@ a {
 .mobile-link {
   padding: 12px 0;
   border-bottom: 1px solid #efede7;
+  color: #292929;
   text-decoration: none;
   font: 15px Arial, sans-serif;
 }
 
+.mobile-link:hover,
 .mobile-link.active {
   color: var(--gold);
 }
@@ -224,21 +214,21 @@ a {
 
 .mobile-login-btn {
   display: block;
+  padding: 13px;
   text-align: center;
-  padding: 12px;
-  background: var(--sovana-blue);
-  color: white;
+  background: var(--blue);
+  color: #fff;
   text-decoration: none;
-  font: 14px Arial, sans-serif;
   border-radius: 30px;
+  font: 14px Arial, sans-serif;
 }
 
 /* ARTICLE HERO */
 
 .article-hero {
   background: var(--cream);
-  border-bottom: 1px solid var(--line);
-  padding: clamp(48px, 7vw, 88px) 22px clamp(42px, 6vw, 72px);
+  border-bottom: 1px solid #e7e2d7;
+  padding: clamp(48px, 7vw, 88px) 22px;
   text-align: center;
 }
 
@@ -255,7 +245,7 @@ a {
   margin: 0 auto;
   color: #25271f;
   font-size: clamp(34px, 5vw, 58px);
-  line-height: 1.15;
+  line-height: 1.2;
   font-weight: 400;
 }
 
@@ -266,18 +256,18 @@ a {
   margin: 27px auto 0;
 }
 
-/* ARTICLE */
+/* ARTICLE CONTENT */
 
 .article-wrap {
   max-width: 900px;
-  margin: 0 auto;
+  margin: auto;
   padding: 58px 24px 80px;
 }
 
 .article-content {
+  color: #484840;
   font-size: 17px;
   line-height: 1.9;
-  color: #484840;
 }
 
 .article-content p {
@@ -286,40 +276,41 @@ a {
 
 .article-content h2 {
   margin: 48px 0 17px;
-  color: #24271f;
+  color: #25271f;
   font-size: clamp(25px, 3vw, 32px);
   line-height: 1.3;
   font-weight: 400;
 }
 
-.article-content a {
+/* KEYWORD LINKS */
+
+.article-content a.keyword-link {
   color: #987744;
+  text-decoration: underline;
   text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
+  text-underline-offset: 4px;
 }
 
-.article-content a:hover {
-  color: #5f4a29;
+.article-content a.keyword-link:hover {
+  color: var(--blue);
+}
+
+/* OTHER LINKS */
+
+.article-content a:not(.keyword-link) {
+  color: var(--blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 /* FOOTER */
 
 .sovana-footer {
-  --white: #fff;
-  --white-soft: #ffffffcc;
-  --white-muted: #ffffff9e;
-
-  width: 100%;
-  color: var(--white);
   position: relative;
   overflow: hidden;
+  color: #fff;
+  background: linear-gradient(135deg, #07549a, #06428e);
   font-family: Arial, sans-serif;
-  background: linear-gradient(
-    135deg,
-    var(--sovana-blue) 0%,
-    #0f4ca2 48%,
-    var(--sovana-blue-dark) 100%
-  );
 }
 
 .sovana-footer::before,
@@ -350,7 +341,7 @@ a {
 }
 
 .sovana-footer__container {
-  max-width: var(--max);
+  max-width: 1200px;
   margin: auto;
   display: grid;
   grid-template-columns: 1.5fr .8fr .9fr 1.25fr;
@@ -375,7 +366,6 @@ a {
 
 .sovana-footer__gold-line {
   display: flex;
-  align-items: center;
   margin: 22px 0 18px;
 }
 
@@ -388,7 +378,7 @@ a {
 .sovana-footer__brand p {
   max-width: 430px;
   margin: 0 0 22px;
-  color: var(--white-soft);
+  color: #ffffffcc;
   font: 16px/1.9 Arial, sans-serif;
 }
 
@@ -421,13 +411,12 @@ a {
 }
 
 .sovana-footer__column nav a {
-  color: var(--white-soft);
+  color: #ffffffcc;
   font-size: 16px;
   text-decoration: none;
 }
 
-.sovana-footer__column nav a:hover,
-.sovana-footer__discover:hover {
+.sovana-footer__column nav a:hover {
   color: #fff;
 }
 
@@ -457,13 +446,13 @@ a {
 
 .sovana-footer__contact-content p {
   margin: 4px 0 0;
-  color: var(--white-soft);
-  font-size: 16px;
+  color: #ffffffcc;
+  font-size: 15px;
   line-height: 1.7;
 }
 
 .sovana-footer__bottom {
-  max-width: var(--max);
+  max-width: 1200px;
   margin: auto;
   padding: 18px 24px;
   position: relative;
@@ -472,7 +461,7 @@ a {
   display: flex;
   justify-content: space-between;
   gap: 18px;
-  color: var(--white-muted);
+  color: #ffffff9e;
 }
 
 .sovana-footer__bottom p {
@@ -494,14 +483,14 @@ a {
 
 /* RESPONSIVE */
 
-@media (max-width: 1250px) {
+@media(max-width: 1250px) {
   .desktop-menu {
-    gap: 5px;
+    gap: 4px;
   }
 
   .desktop-menu__item {
-    font-size: 13px;
-    padding: 12px;
+    font-size: 12px;
+    padding: 11px;
   }
 
   .brand {
@@ -514,7 +503,7 @@ a {
   }
 }
 
-@media (max-width: 900px) {
+@media(max-width: 900px) {
   .desktop-menu,
   .navbar__desktop {
     display: none;
@@ -537,14 +526,9 @@ a {
     width: 220px;
     height: 52px;
   }
-
-  .brand__logo-image {
-    width: 100%;
-    height: 100%;
-  }
 }
 
-@media (max-width: 600px) {
+@media(max-width: 600px) {
   .article-wrap {
     padding: 40px 21px 58px;
   }
@@ -585,69 +569,68 @@ a {
 <!-- HEADER -->
 
 <header class="navbar">
-  <div class="navbar__container">
+<div class="navbar__container">
 
-    <a href="/" class="brand" aria-label="SOVANA Home">
-      <img
-        class="brand__logo-image"
-        alt="SOVANA — Where Gods Would Dine"
-        src="https://sovana.in/assets/sovana-navbar-logo-DfvoWEO2.png"
-      >
-    </a>
+<a href="/" class="brand" aria-label="SOVANA Home">
+<img
+class="brand__logo-image"
+alt="SOVANA — Where Gods Would Dine"
+src="https://sovana.in/assets/sovana-navbar-logo-DfvoWEO2.png">
+</a>
 
-    <nav class="desktop-menu" aria-label="Main navigation">
-      <a class="desktop-menu__item active" href="/">Home</a>
-      <a class="desktop-menu__item" href="https://sovana.in/about">About</a>
-      <a class="desktop-menu__item" href="https://sovana.in/gallery">Gallery</a>
-      <a class="desktop-menu__item" href="https://sovana.in/events">Book an Events</a>
-      <a class="desktop-menu__item" href="https://sovana.in/upcoming-sovana">Upcoming @ SOVANA</a>
-      <a class="desktop-menu__item" href="https://sovana.in/reservation">Reserve a Table</a>
-      <a class="desktop-menu__item" href="https://sovana.in/contact">Contact</a>
-    </nav>
+<nav class="desktop-menu" aria-label="Main navigation">
+<a class="desktop-menu__item active" href="/">Home</a>
+<a class="desktop-menu__item" href="https://sovana.in/about">About</a>
+<a class="desktop-menu__item" href="https://sovana.in/gallery">Gallery</a>
+<a class="desktop-menu__item" href="https://sovana.in/events">Book an Events</a>
+<a class="desktop-menu__item" href="https://sovana.in/upcoming-sovana">Upcoming @ SOVANA</a>
+<a class="desktop-menu__item" href="https://sovana.in/reservation">Reserve a Table</a>
+<a class="desktop-menu__item" href="https://sovana.in/contact">Contact</a>
+</nav>
 
-    <div class="navbar__desktop">
-      <a class="login-btn" href="https://sovana.in/login">
-        <span>♙</span>
-        <span>Login</span>
-      </a>
-    </div>
+<div class="navbar__desktop">
+<a class="login-btn" href="https://sovana.in/login">
+♙ <span>Login</span>
+</a>
+</div>
 
-    <div class="navbar__mobile" id="mobileMenu">
+<div class="navbar__mobile" id="mobileMenu">
 
-      <button type="button" class="mobile-menu-btn"
-        id="openMenu" aria-label="Open Menu" aria-expanded="false">☰</button>
+<button type="button" class="mobile-menu-btn"
+id="openMenu" aria-label="Open Menu"
+aria-expanded="false">☰</button>
 
-      <div class="mobile-overlay" id="mobileOverlay"></div>
+<div class="mobile-overlay" id="mobileOverlay"></div>
 
-      <aside class="mobile-drawer" aria-label="Mobile navigation">
+<aside class="mobile-drawer">
 
-        <div class="mobile-header">
-          <div class="mobile-brand">
-            <h2>SOVANA</h2>
-            <span>WHERE GODS WOULD DINE</span>
-          </div>
-          <button type="button" class="mobile-close-btn"
-            id="closeMenu" aria-label="Close Menu">✕</button>
-        </div>
+<div class="mobile-header">
+<div class="mobile-brand">
+<h2>SOVANA</h2>
+<span>WHERE GODS WOULD DINE</span>
+</div>
+<button type="button" class="mobile-close-btn"
+id="closeMenu" aria-label="Close Menu">✕</button>
+</div>
 
-        <nav class="mobile-nav">
-          <a class="mobile-link active" href="/">Home</a>
-          <a class="mobile-link" href="https://sovana.in/about">About</a>
-          <a class="mobile-link" href="https://sovana.in/gallery">Gallery</a>
-          <a class="mobile-link" href="https://sovana.in/events">Book an Events</a>
-          <a class="mobile-link" href="https://sovana.in/upcoming-sovana">Upcoming @ SOVANA</a>
-          <a class="mobile-link" href="https://sovana.in/reservation">Reserve a Table</a>
-          <a class="mobile-link" href="https://sovana.in/contact">Contact</a>
-        </nav>
+<nav class="mobile-nav">
+<a class="mobile-link active" href="/">Home</a>
+<a class="mobile-link" href="https://sovana.in/about">About</a>
+<a class="mobile-link" href="https://sovana.in/gallery">Gallery</a>
+<a class="mobile-link" href="https://sovana.in/events">Book an Events</a>
+<a class="mobile-link" href="https://sovana.in/upcoming-sovana">Upcoming @ SOVANA</a>
+<a class="mobile-link" href="https://sovana.in/reservation">Reserve a Table</a>
+<a class="mobile-link" href="https://sovana.in/contact">Contact</a>
+</nav>
 
-        <div class="mobile-footer">
-          <a class="mobile-login-btn" href="https://sovana.in/login">Login</a>
-        </div>
+<div class="mobile-footer">
+<a class="mobile-login-btn" href="https://sovana.in/login">Login</a>
+</div>
 
-      </aside>
-    </div>
+</aside>
+</div>
 
-  </div>
+</div>
 </header>
 
 <!-- ARTICLE -->
@@ -655,9 +638,9 @@ a {
 <main>
 
 <section class="article-hero">
-  <p class="article-hero__eyebrow">SOVANA · DINING &amp; HOSPITALITY</p>
-  <h1>Best Family Restaurants in Greater Noida</h1>
-  <div class="article-hero__rule"></div>
+<p class="article-hero__eyebrow">SOVANA · DINING &amp; HOSPITALITY</p>
+<h1>Best Family Restaurants in Greater Noida</h1>
+<div class="article-hero__rule"></div>
 </section>
 
 <article class="article-wrap">
@@ -665,7 +648,7 @@ a {
 
 <p>Choosing a restaurant for a family outing can take more thought than simply deciding what to eat. When parents, children, relatives or friends are part of the plan, everyone may have different expectations. Some people want familiar food, others enjoy trying new cuisines, and many simply want a comfortable place where they can sit together and talk. A good family restaurant brings these things together. It offers a welcoming atmosphere, a menu with enough variety and a setting that works for an ordinary lunch as well as a special occasion. Greater Noida has a growing dining scene, so families have more choices than before, but finding a place that suits the whole group still matters.</p>
 
-<p>The reason for going out also shapes the choice. A quick meal after shopping, a relaxed weekend lunch, a dinner with parents or a birthday celebration may call for slightly different surroundings. Families often look for restaurants where the experience feels easy rather than rushed, where the seating is comfortable and where different food preferences can be accommodated. For anyone searching for the <a href="https://sovana.in/">best family restaurants in Greater Noida</a>, it is useful to consider the complete experience instead of judging a restaurant only by its cuisine or appearance. That balance turns a meal outside into an outing everyone enjoys, without making the choice complicated for the family.</p>
+<p>The reason for going out also shapes the choice. A quick meal after shopping, a relaxed weekend lunch, a dinner with parents or a birthday celebration may call for slightly different surroundings. Families often look for restaurants where the experience feels easy rather than rushed, where the seating is comfortable and where different food preferences can be accommodated. For anyone searching for the <a class="keyword-link" href="https://sovana.in/">Best Family Restaurants in Greater Noida</a>, it is useful to consider the complete experience instead of judging a restaurant only by its cuisine or appearance. That balance turns a meal outside into an outing everyone enjoys, without making the choice complicated for the family.</p>
 
 <h2>What Makes a Restaurant Family-Friendly?</h2>
 
@@ -715,7 +698,7 @@ a {
 
 <h2>Final Thoughts</h2>
 
-<p>Finding the best family restaurants in Greater Noida is ultimately about choosing a place where food, ambience and convenience come together. A varied menu helps when everyone has different preferences, comfortable seating makes it easier to spend time together, and a suitable location keeps the outing convenient. These details matter whether you are planning a regular family lunch, a weekend dinner or a celebration with relatives and friends.</p>
+<p>Finding the <a class="keyword-link" href="https://sovana.in/">Best Family Restaurants in Greater Noida</a> is ultimately about choosing a place where food, ambience and convenience come together. A varied menu helps when everyone has different preferences, comfortable seating makes it easier to spend time together, and a suitable location keeps the outing convenient. These details matter whether you are planning a regular family lunch, a weekend dinner or a celebration with relatives and friends.</p>
 
 <p>SOVANA By Trees and Treats is worth considering if you are looking for a purely vegetarian restaurant in Greater Noida with a multi-cuisine menu and a garden-themed setting. Located opposite JIMS College in Knowledge Park III, it offers North Indian, Chinese, Continental and Mediterranean cuisines, along with indoor and outdoor seating. Its cosy cafe atmosphere and fine dining concept make it an option for casual visits as well as planned gatherings. Explore the <a href="https://sovana.in/">SOVANA website</a>, view its <a href="https://share.google/alF02GLVA5hHd7vgO" target="_blank" rel="noopener noreferrer">Google Business Profile</a> and <a href="https://maps.app.goo.gl/BcuT3ft1Gq35C2uy6" target="_blank" rel="noopener noreferrer">get directions through Google Maps</a> before planning your visit.</p>
 
@@ -755,7 +738,6 @@ DISCOVER SOVANA <span>→</span>
 </section>
 
 <section class="sovana-footer__column">
-
 <h2>Explore</h2>
 <div class="sovana-footer__column-line"></div>
 
@@ -765,18 +747,15 @@ DISCOVER SOVANA <span>→</span>
 <a href="https://sovana.in/gallery">Gallery</a>
 <a href="https://sovana.in/contact">Contact Us</a>
 </nav>
-
 </section>
 
 <section class="sovana-footer__column">
-
 <h2>Dine at SOVANA</h2>
 <div class="sovana-footer__column-line"></div>
 
 <nav aria-label="Dining at SOVANA">
 <a href="https://sovana.in/login">Reserve a Table</a>
 </nav>
-
 </section>
 
 <section class="sovana-footer__column sovana-footer__visit">
@@ -785,9 +764,8 @@ DISCOVER SOVANA <span>→</span>
 <div class="sovana-footer__column-line"></div>
 
 <div class="sovana-footer__contact-item">
-
 <div class="sovana-footer__contact-icon-wrap">
-<svg viewBox="0 0 24 24" aria-hidden="true" class="footer-contact-icon">
+<svg viewBox="0 0 24 24" class="footer-contact-icon" aria-hidden="true">
 <path d="M20 10.3c0 5.1-8 11-8 11s-8-5.9-8-11a8 8 0 1 1 16 0Z"
 fill="none" stroke="currentColor" stroke-width="1.7"></path>
 <circle cx="12" cy="10" r="2.5"
@@ -797,19 +775,13 @@ fill="none" stroke="currentColor" stroke-width="1.7"></circle>
 
 <div class="sovana-footer__contact-content">
 <span>LOCATION</span>
-<p>
-Opposite JIMS College, Knowledge Park III,
-Greater Noida,<br>
-Uttar Pradesh 201308
-</p>
+<p>Opposite JIMS College, Knowledge Park III, Greater Noida,<br>Uttar Pradesh 201308</p>
 </div>
-
 </div>
 
 <div class="sovana-footer__contact-item">
-
 <div class="sovana-footer__contact-icon-wrap">
-<svg viewBox="0 0 24 24" aria-hidden="true" class="footer-contact-icon">
+<svg viewBox="0 0 24 24" class="footer-contact-icon" aria-hidden="true">
 <path d="M7.1 3.7 9.3 3c.7-.2 1.4.2 1.7.8l1.2 2.8c.2.5.1 1-.2 1.4L10.7 9.6a15.3 15.3 0 0 0 3.7 3.7l1.6-1.3c.4-.3.9-.4 1.4-.2l2.8 1.2c.6.3.9 1 .8 1.7l-.7 2.2c-.2.7-.8 1.1-1.5 1.1C11.4 18 6 12.6 6 5.2c0-.7.4-1.3 1.1-1.5Z"
 fill="none" stroke="currentColor" stroke-width="1.7"
 stroke-linecap="round" stroke-linejoin="round"></path>
@@ -820,13 +792,11 @@ stroke-linecap="round" stroke-linejoin="round"></path>
 <span>RESERVATIONS</span>
 <p>Contact SOVANA<br>for table reservations</p>
 </div>
-
 </div>
 
 <div class="sovana-footer__contact-item">
-
 <div class="sovana-footer__contact-icon-wrap">
-<svg viewBox="0 0 24 24" aria-hidden="true" class="footer-contact-icon">
+<svg viewBox="0 0 24 24" class="footer-contact-icon" aria-hidden="true">
 <circle cx="12" cy="12" r="8.5"
 fill="none" stroke="currentColor" stroke-width="1.7"></circle>
 <path d="M12 7.5v5l3.2 1.9"
@@ -839,7 +809,6 @@ stroke-linecap="round"></path>
 <span>HOURS</span>
 <p>11:00 AM – 11:00 PM<br>Monday – Sunday</p>
 </div>
-
 </div>
 
 </section>
@@ -850,22 +819,20 @@ stroke-linecap="round"></path>
 <div class="sovana-footer__bottom">
 
 <p>
-© 2026 TREES &amp; TREATS HOSPITALITY SERVICES.
-All rights reserved.
+© 2026 TREES &amp; TREATS HOSPITALITY SERVICES. All rights reserved.
 </p>
 
 <p class="sovana-footer__credit">
 Designed and Developed by
 <a href="https://snapticlemedia.in/"
 target="_blank"
-rel="noopener noreferrer">SNAPTICLEMEDIA</a>
+rel="noopener noreferrer"><strong>SNAPTICLEMEDIA</strong></a>
 </p>
 
 </div>
-
 </footer>
 
-<!-- MOBILE MENU JAVASCRIPT -->
+<!-- MOBILE MENU -->
 
 <script>
 const mobileMenu = document.getElementById('mobileMenu');
@@ -880,15 +847,11 @@ function setMenu(open) {
 }
 
 openMenu.addEventListener('click', () => setMenu(true));
-
 closeMenu.addEventListener('click', () => setMenu(false));
-
 mobileOverlay.addEventListener('click', () => setMenu(false));
 
 document.addEventListener('keydown', event => {
-  if (event.key === 'Escape') {
-    setMenu(false);
-  }
+  if (event.key === 'Escape') setMenu(false);
 });
 </script>
 
